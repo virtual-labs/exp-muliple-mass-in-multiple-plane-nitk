@@ -1,9 +1,9 @@
 <table style="text-align:justify;">
-  <tr style=”background-color: white”>
+  <tr style="background-color: white">
     <th>References</th>
     <th>Contributors list</th>
   </tr>
-  <tr style=”background-color: white”>
+  <tr style="background-color: white">
     <td>
     <ol>
     <li>Theory-of-Machines-14th-ed-Khurmi-2005 (2)</li>
