@@ -1,0 +1,1 @@
+The purpose of the experiment is to take an unbalanced system with rotating masses and adjust the radii of the two outer masses, calculate their mass and angular positions in order to achieve a balanced system. 
