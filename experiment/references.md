@@ -6,19 +6,18 @@
   <tr style="background-color: white">
     <td>
     <ol>
-    <li>Theory-of-Machines-14th-ed-Khurmi-2005 (2)</li>
     <li>RL Norton, Kinematics snd Dynamics of Machine Text Book</li>
-    <li>NPTEL-DOM Video,By Amitabha Gosh</li>
+    <li>NPTEL-DOM Video,By Prof. Amitabha Ghosh</li>
     <li>NPTEL- Balancing of Machines</li>
     </ol>
    </td>
     <td>Developer : Dr. K V Gangadharan | NITK</br></br>
     Contributors :
     <ul style="list-style-type: none;">
-    <li>Akshaya| NITK</li>
     <li>Nishan B Shetty | NITK</li>
     <li>Rohit Kushawa | NITK</li>
     <li>Vishwas | NITK</li>
+    <li>Akshaya| NITK</li>
     <li>Anusha B Salian | NITK</li>
     <li>Tejas Pethker | NITK</li>
     <li>Rohit Rajpal | NITK</li>
@@ -33,7 +32,3 @@
      </ul></td>
   </tr>
 </table>
- 
- 
-
-
