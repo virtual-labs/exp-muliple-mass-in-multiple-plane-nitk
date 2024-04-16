@@ -1,17 +1,17 @@
-#### These procedure steps will be followed on the simulator
+### Procedure
 
-1. In the simulation window, the front view and side view of a rotating shaft with two unbalanced masses in different planes are displayed.<br>
-2. There are sliders given on right side of the screen sets the values of input variables, viz., two unbalanced masses on the shaft (m1, m2), their radii of rotation (r1, r2), relative angular position (theta1) and distance between their planes (l1). . After setting these variables, the navigation button at the bottom right corner moves onto the next segment.<br>
-   ![alt text](images/multiple1.PNG)<br>
+<div style="text-align:left">
+  Click on the Simulation icon    <img src="images/simulation.png" alt="Alt text" style="height:80px; width:80px;">  to view the simulation screen. 
 
-3. After moving on to the next pane, the radii and positions of the balancing masses have to be entered by adjusting the slider. After setting the values, it is required by the user to calculate the values for balancing masses and their angular position.<br>
-   ![alt text](images/multiple2.PNG)<br>
+   ![Alt text](images/Simscreen1.png)
+   
+   In order to view the variable section click on the Variable icon. <img src="images/var1.png" alt="Alt text" style="height:80px; width:80px;"> and to change the variables click on the Next <img src="images/next2.png" alt="Alt text" style="height:80px; width:80px;"> or Previous <img src="images/prev.png" alt="Alt text" style="height:80px; width:80px;"> button inside the variable section.
 
-4. Once the values of masses and their angular position from the previous step are calculated, the user needs to navigate to the next pane, enter the values in the boxes provided, the balanced masses with their angular positions is displayed instantly.<br>
-   ![alt text](images/multiple3.PNG)<br>
 
-5. Click on the submit button to submit the results and press play/pause button to pause the simulation and clicking on the direction change button, reverses the direction of rotating masses.<br>
-   ![alt text](images/multiple4.PNG)<br>
+   ![Alt text](images/var2.png)
 
-6. Further, it can be noted that, the correct values of balancing masses and their angular positions as calculated by the system is also displayed at the bottom of the simulation window.<br>
-   ![alt text](images/multiple5.PNG)<br>
+   Click on Play icon <img src="images/play1.png" alt="Alt text" style="height:80px; width:80px;"> to run the simulation and click on Pause icon <img src="images/pause.png" alt="Alt text" style="height:80px; width:80px;"> to stop it.
+
+   Click on the Rotate icon <img src="images/rotate_clockwise.png" alt="Alt text" style="height:80px; width:80px;"> to change the direction of rotation.
+   
+</div>
