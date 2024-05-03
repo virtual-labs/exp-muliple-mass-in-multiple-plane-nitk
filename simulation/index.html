@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLVE-DOM-Balancing of Multiple Mass in Multiple Plane</title>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/query.css" />
+  <!-- <script defer src="https://code.jquery.com/jquery.min.js"></script> -->
+  <script defer src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script defer src="https://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script defer type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="application/json" src='js/jquery.min.map'></script>
+  <script type="text/javascript" src="js/MOMscript.js"></script>
+
+  <script defer src="js/script.js"></script>
+
+</head>
+
+<body onload="startsim();varinit();
+">
+
+  <div class="title-div-container">
+
+    <div class="title-div">
+      <div class="logo-div">
+        <a href="#"><img src="images/logo_nitk.png" alt="Logo" class="logo" /></a>
+      </div>
+      <h1>Balancing of Multiple Mass in Multiple Plane</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sidebar">
+      <ul class="tool-menu">
+        <li class="tool-list">
+          <a href="#simulation" class="tool-link" title="Simulation"><svg xmlns="http://www.w3.org/2000/svg"
+              fill="#089B93" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="icons">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z" />
+            </svg>
+          </a>
+          <span>Simulation</span>
+        </li>
+        <li class="tool-list">
+          <a href="#variables" class="tool-link" title="Variables"><svg xmlns="http://www.w3.org/2000/svg"
+              fill="#ffffff" viewBox="0 0 24 24" stroke-width="1.5" stroke="#089B93" class="icons">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.745 3A23.933 23.933 0 003 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 011.105.402l2.402 7.206a.75.75 0 001.104.401l1.445-.889m-8.25.75l.213.09a1.687 1.687 0 002.062-.617l4.45-6.676a1.688 1.688 0 012.062-.618l.213.09" />
+            </svg></a>
+          <span>Variables</span>
+        </li>
+        <li class="tool-list" title="Play/Pause">
+          <img id="playpausebutton" onclick="simstate()" src="images/bluepausedull.svg" alt="" class="icons" />
+          <span class="playPause">Pause</span>
+        </li>
+        <li class="tool-list" title="Rotate">
+          <img id="rotationbutton" onclick="rotstate()" src="images/bluecwdull.svg" alt="" class="icons" />
+          <span class="rotate">Rotate</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="main-section">
+        <div id="simulation" class="main__task-div">
+          <h3 class="task-title">Simulation</h3>
+          <div class="canvas__div">
+
+
+
+            <canvas id="simscreen" height="400px" width="550px"></canvas>
+
+            <!-- <div id="canvas-container" class="canvas__container"> -->
+              <img id="referenceplane" src="images/Reference.png" alt="">
+            <!-- </div> -->
+
+            <div id="commentboxcorrect" style="position: relative; display: none;"></div>
+            <div id="commentboxleft" style="position: relative; display: none;"></div>
+            <div id="commentboxleft1" style="position: relative; display: none;"></div>
+            <div id="commentboxright" style="position: relative; display: none;"></div>
+          </div>
+
+        </div>
+        <div id="variables" class="main__task-div">
+
+          <div class="settings-sections">
+            <h3 class="task-title">Variables</h3>
+            <div class="variables-sections">
+              <div id="mass1" class="var-div">
+                <div class="input-container">
+                  <label for="m1spinner">m1 </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="m1spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">kg</span>
+                </div>
+                <div class="var-slider" id="m1slider"></div>
+              </div>
+              <div id="mass2" class="var-div">
+                <div class="input-container">
+                  <label for="m2spinner">m2 </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="m2spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">kg</span>
+                </div>
+                <div class="var-slider" id="m2slider"></div>
+              </div>
+              <div id="radius1" class="var-div">
+                <div class="input-container">
+                  <label for="r1spinner">r1</label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="r1spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="r1slider"></div>
+
+              </div>
+              <div id="radius2" class="var-div">
+                <div class="input-container">
+                  <label for="r2spinner">r2 </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="r2spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="r2slider"></div>
+              </div>
+              <div id="tt1" class="var-div">
+                <div class="input-container">
+                  <label for="theta1spinner" >theta1 </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="theta1spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">deg</span>
+                </div>
+                <div class="var-slider" id="theta1slider"></div>
+
+              </div>
+              <div id="len1" class="var-div">
+                <div class="input-container">
+                  <label for="l1spinner">l1</label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="l1spinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="l1slider"></div>
+              </div>
+              <div id="radiusa" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="raspinner">ra </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="raspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="raslider"></div>
+              </div>
+
+              <div id="lena" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="laspinner">la </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="laspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="laslider"></div>
+              </div>
+              <div id="radiusb" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="rbspinner">rb </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="rbspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="rbslider"></div>
+              </div>
+
+              <div id="lenb" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="lbspinner">lb </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="lbspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">cm</span>
+                </div>
+                <div class="var-slider" id="lbslider"></div>
+              </div>
+
+              <div id="massa" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="maspinner">ma </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="maspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">kg</span>
+                </div>
+                <div class="var-slider" id="maslider"></div>
+              </div>
+
+              <div id="tta" class="var-div" style="display: none;">
+                <div class="input-container thetaa">
+                  <label for="thetaaspinner">thetaa </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="thetaaspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">deg</span>
+
+                </div>
+                <div class="var-slider" id="thetaaslider"></div>
+              </div>
+
+              <div id="massb" class="var-div" style="display: none;">
+                <div class="input-container">
+                  <label for="mbspinner">mb </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="mbspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">kg</span>
+                </div>
+                <div class="var-slider" id="mbslider"></div>
+              </div>
+
+              <div id="ttb" class="var-div" style="display: none;">
+                <div class="input-container">
+                  
+                  <label for="thetabspinner">thetab </label>
+                  <!-- <span class="moveInput"> -->
+                  <input class="var-spinner" id="thetabspinner" disabled="disabled"
+                    onkeypress="return isNumberKey(event)"></input>
+                  <!-- </span> -->
+                  <span class="unit">deg</span>
+                
+                </div>
+                <div class="var-slider" id="thetabslider"></div>
+              </div>
+
+              <div id="resultdata" class="submitbutton" style="display: none;">
+                <input class="var-spinner" id="submitBtn" type="submit" onclick="display();"></input>
+              </div>
+              <!-- <p id="coordinates">Mouse coordinates: x -</p> -->
+              <div class="var-controls">
+                <img id="tabchangebackward" onclick="tabchangeb()" src="images/bluebkdulls.svg" alt="" class="icons" />
+                <img id="tabchangeforward" onclick="tabchangef()" src="images/bluebkwdulls.svg" alt="" class="icons" />
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="main__task-div footer copytext">
+        <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
+      </div>
+    </div>
+  </div>
+  </div>
+<script src="../assets/js/iframeResize.js"></script></body>
+
+</html>
