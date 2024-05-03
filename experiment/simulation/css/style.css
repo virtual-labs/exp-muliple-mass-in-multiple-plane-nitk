@@ -395,7 +395,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 200%;
+  /* width: 200%; */
   
 
 }
@@ -418,18 +418,17 @@ h1 {
 
 .variables-sections,
 .control-sections {
-  padding: 1rem 1rem 2rem 1rem;
+  padding: 2rem -1rem 2rem 3.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   row-gap: 1rem;
-  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50px;
 }
 
-.variables-sections{
-  position: relative;
-  left: 40px;
-}
+
 
 .var-div {
   display: grid;
@@ -598,13 +597,13 @@ label{
   
 }
 
-.variables-sections{
+/* .variables-sections{
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   
-}
+} */
 
 
 
